@@ -1,0 +1,315 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background: #080808;
+    color: #fff;
+
+}
+#header {
+    width: 100%;
+    height: 100vh;
+   
+    background-size: cover; /* Adjusted to cover the entire background */
+    background-position: center; /* Center the background */
+    padding-top: 80px; /* Added padding to create space for the fixed nav */
+    box-sizing: border-box; /* Include padding in the height calculation */
+}
+.neon-green {
+    color: #39ff14; /* Neon green color code */
+    
+}
+
+.container{
+    padding: 10px 10%;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333; /* Change the background color as needed */
+    z-index: 1000;
+}
+
+.logo {
+    width: 140px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    background-color: #ff004f;
+    transition: width 0.3s ease; /* Added transition for smooth animation */
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.header-text{
+    margin-top: 20%;
+    font-size: 30px;
+}
+.header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+}
+.header-text h1 span{
+    color: #ff004f;
+}
+.header-text h2 span{
+    color: #39ff14;
+}
+/*--------about-----------------------*/
+#about{
+    padding: 80px 0;
+    color: #fff;
+
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.about-col-1{
+    
+    flex-basis:35%; /* Adjust the width of the image column */
+    margin-right: 5%;
+     /* Add spacing between image and text */
+}
+
+
+.tab-contents ul li img {
+    width: 80px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Provide some spacing between image and text */
+}
+.about-col-1 img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    display: block;
+
+}
+.about-col-2{
+    flex-basis: 60%;
+    color:#fff;
+    max-width: calc(60% -5%);
+    white-space: normal; 
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+
+}
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+    flex: 1; /* Allows the text to take available space */
+    max-width: calc(60% - 5%);/* Adjust the width accounting for image width and margin */
+    /* This will keep the text within the available space after considering the image width and margin */
+    overflow-wrap: break-word;
+}
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+    color: #fff;
+    max-width: calc(60%-5% );
+
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+
+    transition: 0.5s;
+
+
+}
+.tab-links.active-link::after{
+    width: 50%;
+
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 14px 0;
+    max-width: calc(60%-5% );
+}
+.tab-contents ul li span{
+    color: #b54769;
+    font-size: 50px;
+    flex: 1; /* Allows the text to take available space */
+   /* Adjust the width accounting for image width and margin */
+    /* This will keep the text within the available space after considering the image width and margin */
+    overflow-wrap: break-word;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+
+
+}
+.content-column {
+    max-width: calc(60%-5% ); /* Adjusted width accounting for the gap */
+    /* Other styles as needed */
+}
+
+/* Adjusted margin for the paragraphs within the content column */
+
+
+
+/*-------services--------*/
+#services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+
+}
+.services-list div{
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+
+}
+.services-list div:hover{
+    background: #86A606;
+    transform: translateY(-10px);
+
+
+}
+/*-----------portfolio------*/
+#portfolio{
+    padding: 50px 0;
+}
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+
+}
+.work img{
+    width: 300px;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+
+}
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+
+}
+.work:hover img{
+    transform: scale(1.5);
+}
+.work:hover .layer{
+    height: 100%;
+}
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solic #ff004f;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+}
+.btn:hover{
+    background: #ff004f;
+}
+
+
+
+html{
+    scroll-behavior: smooth;
+}
+.button-image {
+    width: 80px; /* Adjust the width as needed */
+    height: 70px; /* Adjust the height as needed */
+  }
+  .button-container {
+    text-align: right;
+}
+#portfolio {
+    background-color: #00008B; /* Replace with your desired color */
+    /* Add any other styles you need for this section */
+}
+#Contact{
+    background-color: #9D00FF;
+}
+#about{
+    background-color: #7B241C ;
+}
+#services{
+    background-color: #6E0DD0;
+}
